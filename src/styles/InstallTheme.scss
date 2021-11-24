@@ -1,0 +1,41 @@
+@import 'vars';
+
+.Install {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  height: 70rem;
+  align-content: center;
+
+  &__step {
+    display: grid;
+    grid-template-rows: auto 18rem 6.4rem;
+    height: 100%;
+    text-align: center;
+
+    img {
+      height: 22rem;
+      place-self: center;
+      margin-bottom: 5.6rem;
+    }
+    p {
+      padding: 0 4px;
+      font-size: 2rem;
+    }
+    input {
+      margin: 0 auto;
+      width: 94%;
+      height: 6.4rem;
+      background-color: var(--dark-light);
+    }
+  }
+  &__step:nth-of-type(1) {
+    img {
+      width: 26rem;
+    }
+  }
+  &__step:nth-of-type(3) {
+    img {
+      width: 24rem;
+    }
+  }
+}
