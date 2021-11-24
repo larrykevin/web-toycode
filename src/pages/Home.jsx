@@ -1,4 +1,6 @@
 import React from 'react';
+import { CopyToClipboard } from 'react-copy-to-clipboard';
+import toast, { Toaster } from 'react-hot-toast';
 import image from '../assets/images/toyCode-image.png';
 import icon from '../assets/icons/github-logo.svg';
 import '../styles/Home.scss';
@@ -11,8 +13,24 @@ const Home = () => {
           <h2>Descarga gratuita</h2>
           <p>Clona el repositorio desde la carpeta theme de VSCode</p>
           <div>
-            <input placeholder='https://github.com/larrykevin/toycode' />
-            <a>
+            <CopyToClipboard text='https://github.com/larrykevin/toycode'>
+              <p className='copied' onClick={() =>  toast('Link de ToyCode Copiado',
+                  {
+                    icon: '📋',
+                    style: {
+                      borderRadius: '8px',
+                      background: '#3D405F',
+                      color: '#F1F2FF',
+                      fontSize: '1.8rem'
+                    },
+                    position: 'bottom-right'
+                  }
+                )
+              }>
+              https://github.com/larrykevin/toycode
+              </p>
+            </CopyToClipboard>
+            <a href="https://github.com/larrykevin/toycode" target="_blank">
               <img src={ icon } alt='ícono de github' />
             </a>
           </div>
@@ -20,12 +38,20 @@ const Home = () => {
         <section className='Main__theme--support'>
           <h2>Apoyar</h2>
           <p>Este es un tema que utilizo para mis proyectos.</p>
-          <p>Si te ha servido y deseas apoyarme te agradecería de corazón. Si te ha gustado no olvides compartir.</p>
-          <button>Gracias por el tema</button>
+          <p>Es gratis. Si quieres apoyarme te lo agradezco :3.</p>
+          <a href='https://www.paypal.com/donate/?hosted_button_id=G5BMRTM7ZTHJU'>
+            <button>Gracias por el tema</button>
+          </a>
         </section>
       </section>
       <section className='Main__image'>
         <img src={image} alt='imagen de ToyCode' />
+        <Toaster 
+          containerStyle={{
+            bottom: 60,
+            right: 120,
+          }}
+        />
       </section>
     </main>
   );

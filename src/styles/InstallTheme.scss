@@ -12,20 +12,27 @@
     height: 100%;
     text-align: center;
 
+    &--route {
+      width: 96%;
+      height: 6.4rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 0.8rem;
+      font-family: 'JetBrains Mono', sans-serif;
+      font-size: 1.4rem;
+      font-weight: normal;
+      color: var(--yellow);
+      background-color: var(--dark-light);
+    }
+    & div p {
+      padding: 0 4px;
+      font-size: 2rem;
+    }
     img {
       height: 22rem;
       place-self: center;
       margin-bottom: 5.6rem;
-    }
-    p {
-      padding: 0 4px;
-      font-size: 2rem;
-    }
-    input {
-      margin: 0 auto;
-      width: 94%;
-      height: 6.4rem;
-      background-color: var(--dark-light);
     }
   }
   &__step:nth-of-type(1) {
